@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vientre Divino: retiro para mujeres en Mount Shasta, California. Del 20 al 23 de agosto de 2026, guiado por Isabela Tena." />
+  <title>Vientre Divino · Retiro para Mujeres en Mount Shasta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Paleta final sin verdes: Shasta Celestial + Mundo Holístico USA */
+      --azul-noche: #102B3A;
+      --azul-profundo: #1F4E66;
+      --azul-marca: #6FAEC4;
+      --azul-shasta: #7FB8CE;
+      --azul-hielo: #EEF8FB;
+      --azul-bruma: #F5FBFF;
+      --blanco: #FFFFFF;
+      --marfil: #FFF9F1;
+      --dorado: #C9A76A;
+      --vino: #6F3D56;
+      --arcilla: #C9826B;
+      --arena: #D8C3A5;
+      --texto: #314650;
+      --texto-suave: #65777F;
+      --borde: rgba(31, 78, 102, 0.14);
+      --sombra-suave: 0 24px 70px rgba(16, 43, 58, 0.12);
+      --sombra-card: 0 18px 45px rgba(16, 43, 58, 0.1);
+      --radio-xl: 34px;
+      --radio-lg: 22px;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Jost", system-ui, sans-serif;
+      --container: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, rgba(111, 174, 196, .12), transparent 34rem),
+        radial-gradient(circle at 90% 8%, rgba(201, 167, 106, .1), transparent 26rem),
+        var(--azul-bruma);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      z-index: 2000;
+      background: linear-gradient(90deg, var(--azul-marca), var(--dorado), var(--arcilla));
+      box-shadow: 0 0 18px rgba(111, 174, 196, .45);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container { width: min(100% - 32px, var(--container)); margin-inline: auto; }
+    .narrow { max-width: 780px; margin-inline: auto; }
+    .section { padding: 86px 0; }
+    .section-header { max-width: 780px; margin: 0 auto 42px; text-align: center; }
+    .section-header.left { margin-inline: 0; text-align: left; }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--arcilla);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .label::before {
+      content: "✦";
+      color: var(--dorado);
+      font-size: 0.9rem;
+      letter-spacing: 0;
+    }
+    .script {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--arcilla);
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+    .title {
+      margin-top: 14px;
+      font-family: var(--display);
+      font-size: clamp(2.55rem, 8vw, 5.1rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      color: var(--azul-noche);
+      font-weight: 600;
+    }
+    .title em { color: var(--vino); font-style: italic; }
+    .copy {
+      margin-top: 18px;
+      color: var(--texto-suave);
+      font-size: 1.04rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      transition: transform .24s ease, box-shadow .24s ease, background .24s ease, color .24s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--azul-profundo), var(--vino)); color: var(--marfil); box-shadow: 0 18px 36px rgba(35, 77, 99, .25); }
+    .btn-gold { background: var(--dorado); color: var(--azul-noche); box-shadow: 0 18px 36px rgba(201, 167, 106, .28); }
+    .btn-outline { background: rgba(255, 250, 242, .12); color: var(--marfil); border: 1px solid rgba(255, 250, 242, .45); }
+    .btn-light { background: var(--marfil); color: var(--azul-noche); border: 1px solid rgba(31, 78, 102, .12); }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 14px 0;
+      transition: padding .28s ease, background .28s ease, box-shadow .28s ease, backdrop-filter .28s ease;
+    }
+    .header.is-scrolled {
+      padding: 9px 0;
+      background: rgba(247, 239, 227, .88);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(31, 51, 40, .1);
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--marfil);
+      font-family: var(--display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      position: relative;
+      z-index: 1002;
+    }
+    .header.is-scrolled .logo { color: var(--azul-noche); }
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      color: var(--azul-noche);
+      background: var(--dorado);
+      font-size: 1.25rem;
+    }
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-links {
+      position: fixed;
+      inset: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      padding: 86px 26px 34px;
+      background: rgba(247, 239, 227, .97);
+      transform: translateX(100%);
+      transition: transform .34s ease;
+      z-index: 1001;
+    }
+    .nav-links.is-open { transform: translateX(0); }
+    .nav-links a {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(31, 78, 102, .12);
+      color: var(--azul-noche);
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-size: .84rem;
+    }
+    .nav-actions { display: none; }
+    .menu-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 250, 242, .35);
+      background: rgba(255, 250, 242, .12);
+      color: var(--marfil);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      position: relative;
+      z-index: 1002;
+    }
+    .header.is-scrolled .menu-btn,
+    .menu-btn.is-open { color: var(--azul-noche); border-color: rgba(31, 78, 102, .18); background: rgba(255, 250, 242, .8); }
+    .menu-btn span,
+    .menu-btn span::before,
+    .menu-btn span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 3px;
+      transition: transform .22s ease, opacity .22s ease;
+      content: "";
+    }
+    .menu-btn span { position: relative; }
+    .menu-btn span::before { position: absolute; top: -6px; }
+    .menu-btn span::after { position: absolute; top: 6px; }
+    .menu-btn.is-open span { background: transparent; }
+    .menu-btn.is-open span::before { transform: translateY(6px) rotate(45deg); }
+    .menu-btn.is-open span::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--marfil);
+      background: var(--azul-noche);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 22%, rgba(201, 167, 106, .18), transparent 25%),
+        linear-gradient(150deg, rgba(16, 43, 58, .88), rgba(35, 77, 99, .62) 48%, rgba(111, 61, 86, .52) 100%),
+        url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2200&q=85") center/cover;
+      transform: scale(1.04);
+      animation: heroZoom 8s ease forwards;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+      background: linear-gradient(180deg, transparent, var(--azul-bruma));
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 128px 0 86px;
+      display: grid;
+      gap: 34px;
+    }
+    .hero-content { max-width: 850px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(201, 167, 106, .42);
+      background: rgba(255, 250, 242, .1);
+      backdrop-filter: blur(12px);
+      color: var(--dorado);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--dorado);
+      box-shadow: 0 0 0 7px rgba(201, 167, 106, .14);
+    }
+    .hero h1 {
+      margin-top: 20px;
+      font-family: var(--display);
+      font-size: clamp(4.2rem, 17vw, 10rem);
+      line-height: .77;
+      letter-spacing: -.075em;
+      font-weight: 700;
+    }
+    .hero h1 em { color: var(--dorado); font-style: italic; }
+    .hero-date {
+      margin-top: 22px;
+      font-family: var(--display);
+      font-size: clamp(1.35rem, 4.3vw, 2.15rem);
+      color: rgba(255, 250, 242, .88);
+      line-height: 1.15;
+    }
+    .hero-copy {
+      max-width: 700px;
+      margin-top: 18px;
+      color: rgba(255, 250, 242, .82);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+    .hero-tagline {
+      display: block;
+      max-width: 720px;
+      margin-top: 18px;
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--dorado);
+      font-size: clamp(1.25rem, 4vw, 1.8rem);
+      line-height: 1.25;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+    .hero-micro {
+      margin-top: 18px;
+      color: rgba(255, 250, 242, .62);
+      font-size: .86rem;
+      letter-spacing: .04em;
+    }
+    .hero-card {
+      max-width: 430px;
+      padding: 24px;
+      border-radius: var(--radio-xl);
+      border: 1px solid rgba(255, 250, 242, .22);
+      background: rgba(255, 250, 242, .12);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .18);
+    }
+    .hero-card strong {
+      display: block;
+      font-family: var(--display);
+      color: var(--dorado);
+      font-size: 2.1rem;
+      line-height: .95;
+    }
+    .hero-card p { margin-top: 12px; color: rgba(255, 250, 242, .78); }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      z-index: 3;
+      transform: translateX(-50%);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 250, 242, .58);
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 42px;
+      background: linear-gradient(180deg, transparent, var(--dorado));
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -42px;
+    }
+    .trust-card {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      border-radius: var(--radio-xl);
+      background: var(--marfil);
+      border: 1px solid var(--borde);
+      box-shadow: var(--sombra-suave);
+    }
+    .trust-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px;
+      border-radius: 18px;
+      background: rgba(168, 191, 163, .14);
+    }
+    .trust-item span {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(201, 167, 106, .2);
+    }
+    .trust-item strong { display: block; color: var(--azul-noche); line-height: 1.2; }
+    .trust-item small { color: var(--texto-suave); }
+
+    /* HOOK */
+    .hook {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(201, 167, 106, .18), transparent 30%),
+        radial-gradient(circle at 0% 100%, rgba(143, 184, 201, .18), transparent 30%),
+        linear-gradient(135deg, var(--azul-noche), var(--azul-profundo));
+      color: var(--marfil);
+      text-align: center;
+    }
+    .hook .script { color: var(--dorado); }
+    .hook h2 {
+      margin-top: 16px;
+      font-family: var(--display);
+      font-size: clamp(2.45rem, 8vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: var(--marfil);
+    }
+    .hook h2 em { color: var(--dorado); }
+    .hook p {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: rgba(255, 250, 242, .82);
+      font-size: 1.08rem;
+    }
+    .hook-box {
+      max-width: 740px;
+      margin: 32px auto 0;
+      padding: 26px;
+      border: 1px solid rgba(201, 167, 106, .32);
+      border-radius: var(--radio-lg);
+      background: rgba(255, 250, 242, .07);
+    }
+    .hook-box p {
+      margin: 0;
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--dorado);
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
+
+    /* QUESTIONS */
+    .questions-grid { display: grid; gap: 14px; }
+    .question-card {
+      position: relative;
+      padding: 22px 50px 22px 20px;
+      border-radius: var(--radio-lg);
+      background: var(--marfil);
+      border: 1px solid rgba(31, 78, 102, .09);
+      box-shadow: 0 10px 26px rgba(31, 78, 102, .06);
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .question-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-card); }
+    .question-card p {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.22rem;
+      line-height: 1.35;
+      color: var(--azul-noche);
+    }
+    .question-card::after {
+      content: "?";
+      position: absolute;
+      right: 18px;
+      top: 8px;
+      font-family: var(--display);
+      font-size: 4rem;
+      line-height: 1;
+      color: rgba(201, 130, 107, .1);
+      font-weight: 700;
+    }
+    .questions-close {
+      max-width: 780px;
+      margin: 32px auto 0;
+      padding: 26px;
+      text-align: center;
+      border-radius: var(--radio-lg);
+      color: var(--marfil);
+      background: linear-gradient(135deg, var(--azul-profundo), var(--vino));
+      box-shadow: var(--sombra-card);
+    }
+    .questions-close p {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.32rem;
+      line-height: 1.45;
+    }
+
+    /* SPLIT */
+    .split {
+      display: grid;
+      gap: 34px;
+      align-items: center;
+    }
+    .image-stack {
+      position: relative;
+      min-height: 440px;
+    }
+    .image-stack img {
+      width: 84%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 999px 999px var(--radio-xl) var(--radio-xl);
+      box-shadow: var(--sombra-suave);
+    }
+    .image-stack img:nth-child(2) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 58%;
+      height: 235px;
+      border: 10px solid var(--azul-bruma);
+      border-radius: var(--radio-xl);
+    }
+    .quote-card {
+      margin-top: 24px;
+      padding: 22px;
+      border-left: 4px solid var(--dorado);
+      border-radius: 0 var(--radio-lg) var(--radio-lg) 0;
+      background: rgba(201, 167, 106, .12);
+    }
+    .quote-card p {
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--vino);
+      font-size: 1.24rem;
+      line-height: 1.45;
+    }
+
+    /* AMAZONA MAGA */
+    .dark {
+      background:
+        radial-gradient(circle at 15% 40%, rgba(201, 167, 106, .18), transparent 32%),
+        radial-gradient(circle at 80% 0%, rgba(143, 184, 201, .16), transparent 34%),
+        linear-gradient(135deg, var(--azul-noche), var(--vino) 100%);
+      color: var(--marfil);
+    }
+    .dark .title { color: var(--marfil); }
+    .dark .title em { color: var(--dorado); }
+    .dark .copy { color: rgba(255, 250, 242, .76); }
+    .transform-grid { display: grid; gap: 22px; }
+    .transform-card {
+      padding: 26px;
+      border-radius: var(--radio-xl);
+      border: 1px solid rgba(255, 250, 242, .15);
+      background: rgba(255, 250, 242, .07);
+      backdrop-filter: blur(12px);
+    }
+    .transform-card h3 {
+      font-family: var(--display);
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--dorado);
+    }
+    .transform-card small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 250, 242, .58);
+      font-style: italic;
+    }
+    .transform-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .transform-card li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 10px;
+      color: rgba(255, 250, 242, .8);
+    }
+    .transform-card li::before { content: "·"; color: var(--dorado); font-size: 1.5rem; line-height: .8; }
+    .transform-note {
+      max-width: 790px;
+      margin: 32px auto 0;
+      text-align: center;
+    }
+    .transform-note p {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      color: rgba(255, 250, 242, .86);
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    /* EXPERIENCE */
+    .experience-grid { display: grid; gap: 16px; }
+    .experience-card {
+      position: relative;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 24px;
+      border-radius: var(--radio-xl);
+      color: var(--marfil);
+      background: var(--azul-profundo);
+      box-shadow: var(--sombra-card);
+    }
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 43, 58, .05), rgba(16, 43, 58, .86));
+      z-index: 1;
+    }
+    .experience-card:nth-child(1) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card:nth-child(2) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card:nth-child(3) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card:nth-child(4) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card:nth-child(5) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card:nth-child(6) { background: linear-gradient(rgba(23,38,30,.15), rgba(23,38,30,.3)), url("https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=900&q=80") center/cover; }
+    .experience-card > * { position: relative; z-index: 2; }
+    .experience-icon { font-size: 2rem; margin-bottom: 10px; }
+    .experience-card h3 {
+      font-family: var(--display);
+      font-size: 2.05rem;
+      line-height: 1;
+      color: var(--dorado);
+    }
+    .experience-card p { margin-top: 8px; color: rgba(255, 250, 242, .82); font-size: .96rem; }
+
+    /* LOCATION */
+    .location-band {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border-radius: var(--radio-xl);
+      color: var(--marfil);
+      background:
+        linear-gradient(90deg, rgba(16, 43, 58, .92), rgba(31, 78, 102, .5)),
+        url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1900&q=85") center/cover;
+      box-shadow: var(--sombra-suave);
+    }
+    .location-band .title { color: var(--marfil); }
+    .location-band .title em { color: var(--azul-shasta); }
+    .location-band .copy { color: rgba(255, 250, 242, .82); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .chip {
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(143, 184, 201, .36);
+      background: rgba(143, 184, 201, .12);
+      color: var(--marfil);
+      font-size: .86rem;
+      font-weight: 600;
+    }
+    .privacy-box {
+      max-width: 780px;
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 250, 242, .12);
+      border: 1px solid rgba(201, 167, 106, .32);
+      color: rgba(255, 250, 242, .84);
+    }
+    .privacy-box strong { color: var(--dorado); }
+
+    /* GUIDE */
+    .guide-card {
+      display: grid;
+      gap: 28px;
+      padding: 24px;
+      border-radius: var(--radio-xl);
+      background: var(--marfil);
+      border: 1px solid var(--borde);
+      box-shadow: var(--sombra-card);
+    }
+    .guide-photo {
+      min-height: 380px;
+      border-radius: var(--radio-xl);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(31, 78, 102, .08), rgba(31, 78, 102, .26)),
+        url("https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=85") center/cover;
+    }
+    .guide-photo::after {
+      content: "Reemplazar por foto real de Isabela Tena";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 12px;
+      border-radius: 999px;
+      color: var(--azul-noche);
+      background: rgba(255, 250, 242, .84);
+      font-size: .8rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(31, 78, 102, .08);
+      color: var(--azul-profundo);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    /* ITINERARY */
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      gap: 0;
+      border-radius: var(--radio-lg) var(--radio-lg) 0 0;
+      background: var(--marfil);
+      border: 1px solid var(--borde);
+      border-bottom: 0;
+    }
+    .tab {
+      flex: 1;
+      min-width: 150px;
+      padding: 16px 12px;
+      border: 0;
+      background: transparent;
+      color: var(--texto-suave);
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .76rem;
+      border-bottom: 3px solid transparent;
+      transition: color .24s ease, background .24s ease, border-color .24s ease;
+    }
+    .tab small { display: block; margin-top: 3px; font-size: .72rem; font-weight: 500; letter-spacing: 0; text-transform: none; opacity: .72; }
+    .tab.is-active { color: var(--azul-noche); border-bottom-color: var(--arcilla); background: rgba(168, 191, 163, .12); }
+    .panel { display: none; }
+    .panel.is-active { display: block; }
+    .day-card {
+      padding: 26px;
+      background: var(--marfil);
+      border: 1px solid var(--borde);
+      border-radius: 0 0 var(--radio-lg) var(--radio-lg);
+    }
+    .day-title {
+      font-family: var(--display);
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--azul-noche);
+    }
+    .day-subtitle {
+      display: block;
+      margin-top: 8px;
+      color: var(--arcilla);
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+    .timeline { position: relative; display: grid; gap: 0; margin-top: 26px; padding-left: 22px; }
+    .timeline::before { content: ""; position: absolute; left: 5px; top: 7px; bottom: 7px; width: 1px; background: var(--arena); }
+    .tl-item { position: relative; display: grid; gap: 4px; padding: 0 0 19px 12px; }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 7px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--arcilla);
+      box-shadow: 0 0 0 4px var(--marfil), 0 0 0 6px rgba(201, 130, 107, .3);
+    }
+    .tl-time { color: var(--dorado); font-weight: 900; font-size: .86rem; letter-spacing: .05em; }
+    .tl-text strong { display: block; color: var(--azul-noche); }
+    .tl-text { color: var(--texto-suave); }
+    .note-box {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 12px;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radio-lg);
+      border: 1px dashed rgba(31, 78, 102, .22);
+      background: rgba(168, 191, 163, .13);
+      color: var(--texto-suave);
+    }
+    .note-box strong { color: var(--azul-noche); }
+
+    /* PRICE */
+    .price-section {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(201, 167, 106, .14), transparent 32%),
+        radial-gradient(circle at 8% 20%, rgba(111, 174, 196, .18), transparent 28%),
+        linear-gradient(145deg, var(--azul-noche), var(--azul-profundo));
+      color: var(--marfil);
+    }
+    .price-section .title { color: var(--marfil); }
+    .price-section .copy { color: rgba(255, 250, 242, .75); }
+    .price-grid { display: grid; gap: 24px; align-items: start; }
+    .price-card {
+      padding: 28px;
+      border-radius: var(--radio-xl);
+      background: rgba(255, 250, 242, .07);
+      border: 1px solid rgba(201, 167, 106, .3);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .12);
+    }
+    .price-label { color: rgba(201, 167, 106, .76); font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 900; }
+    .price { margin-top: 8px; font-family: var(--display); font-size: clamp(4.5rem, 18vw, 7.4rem); line-height: .85; color: var(--dorado); letter-spacing: -.055em; }
+    .price span { font-size: .45em; vertical-align: super; }
+    .includes { list-style: none; display: grid; gap: 10px; margin-top: 24px; }
+    .includes li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      color: rgba(255, 250, 242, .8);
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 250, 242, .08);
+    }
+    .includes li::before { content: "✦"; color: var(--dorado); font-size: .78rem; margin-top: 4px; }
+    .side-card {
+      padding: 24px;
+      border-radius: var(--radio-xl);
+      background: rgba(255, 250, 242, .05);
+      border: 1px solid rgba(255, 250, 242, .13);
+    }
+    .side-card h3 { font-family: var(--display); font-size: 2rem; color: var(--dorado); line-height: 1; }
+    .side-card ul { list-style: none; display: grid; gap: 10px; margin-top: 18px; color: rgba(255, 250, 242, .66); }
+    .side-card li::before { content: "— "; opacity: .6; }
+    .price-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+
+    /* FAQ */
+    .faq-list { max-width: 860px; margin: 0 auto; border-top: 1px solid var(--borde); }
+    .faq-item { border-bottom: 1px solid var(--borde); }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 0;
+      border: 0;
+      background: transparent;
+      color: var(--azul-noche);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--display);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+    .faq-icon {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(201, 130, 107, .12);
+      color: var(--arcilla);
+      transition: transform .24s ease, background .24s ease, color .24s ease;
+    }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); background: var(--arcilla); color: var(--marfil); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-a p { padding: 0 0 20px; color: var(--texto-suave); }
+
+    /* FINAL */
+    .final {
+      padding: 96px 0;
+      text-align: center;
+      color: var(--marfil);
+      background:
+        linear-gradient(180deg, rgba(16, 43, 58, .72), rgba(16, 43, 58, .92)),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85") center/cover;
+    }
+    .final h2 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: var(--display);
+      font-size: clamp(3.1rem, 13vw, 7rem);
+      line-height: .82;
+      letter-spacing: -.06em;
+    }
+    .final h2 em { color: var(--dorado); }
+    .final p { max-width: 720px; margin: 24px auto 0; color: rgba(255, 250, 242, .8); font-size: 1.08rem; }
+    .final-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; align-items: stretch; }
+
+    .footer {
+      padding: 32px 0;
+      color: rgba(216, 195, 165, .48);
+      background: #101a13;
+      font-size: .88rem;
+    }
+    .footer-grid { display: grid; gap: 12px; }
+    .footer strong { display: block; color: var(--arena); font-family: var(--display); font-size: 1.35rem; }
+
+    .wa-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 900;
+      min-height: 58px;
+      padding: 10px 16px 10px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border: 1px solid rgba(255, 255, 255, .35);
+      box-shadow: 0 16px 36px rgba(22, 163, 74, .34), 0 0 0 1px rgba(34, 197, 94, .2);
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .wa-float svg {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      fill: currentColor;
+    }
+    .wa-float small {
+      display: block;
+      font-size: .68rem;
+      letter-spacing: .04em;
+      opacity: .92;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .wa-float strong {
+      display: block;
+      line-height: 1.1;
+      font-size: .84rem;
+      letter-spacing: .01em;
+    }
+    .wa-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(22, 163, 74, .38), 0 0 0 1px rgba(255, 255, 255, .24);
+    }
+
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .72s ease, transform .72s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes heroZoom { to { transform: scale(1); } }
+    @keyframes scrollPulse { 0%, 100% { opacity: .45; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.18); } }
+
+    @media (min-width: 560px) {
+      .hero-actions, .final-actions, .price-actions { flex-direction: row; align-items: center; }
+      .hero-actions .btn, .final-actions .btn, .price-actions .btn { width: auto; }
+      .questions-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-card { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 820px) {
+      .section { padding: 112px 0; }
+      .hero-inner { grid-template-columns: 1fr 370px; align-items: end; }
+      .scroll-cue { display: flex; }
+      .split { grid-template-columns: .9fr 1.1fr; }
+      .transform-grid { grid-template-columns: repeat(2, 1fr); }
+      .experience-grid { grid-template-columns: repeat(3, 1fr); }
+      .location-band { padding: 54px; }
+      .guide-card { grid-template-columns: .85fr 1.15fr; padding: 34px; align-items: center; }
+      .price-grid { grid-template-columns: 1.12fr .88fr; }
+      .footer-grid { grid-template-columns: 1fr auto; align-items: center; }
+    }
+
+    @media (min-width: 1020px) {
+      .menu-btn { display: none; }
+      .nav-links {
+        position: static;
+        min-height: auto;
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2px;
+        padding: 0;
+        background: transparent;
+      }
+      .nav-links a {
+        padding: 10px 11px;
+        border: 0;
+        color: rgba(255, 250, 242, .82);
+        font-size: .72rem;
+      }
+      .header.is-scrolled .nav-links a { color: var(--azul-noche); }
+      .nav-links a:hover { color: var(--dorado); }
+      .nav-actions { display: flex; align-items: center; gap: 10px; }
+      .header.is-scrolled .btn-outline { color: var(--azul-noche); border-color: rgba(31, 78, 102, .18); background: rgba(255, 250, 242, .56); }
+      .questions-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 559px) {
+      .wa-float {
+        padding: 0;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        justify-content: center;
+      }
+      .wa-float-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <header class="header" id="header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="logo" aria-label="Mundo Holistico USA inicio"><span class="logo-mark"><img src="img/logo-Mundoholistico.png" alt="Logo Mundo Holistico USA" /></span> Mundo Holistico USA</a>
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#retiro">El retiro</a>
+        <a href="#para-quien">Para quién</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#itinerario">Itinerario</a>
+        <a href="#inversion">Inversión</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-gold" href="#inversion">Reservar</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <span class="hero-badge">Retiro para mujeres · Mount Shasta, California</span>
+          <h1>Vientre<br><em>Divino</em></h1>
+          <p class="hero-date">Del jueves 20 al domingo 23 de agosto de 2026</p>
+          <p class="hero-copy">Un viaje profundo de sanación femenina, conexión ancestral y transformación interior para mujeres listas para dejar de vivir desde la lucha y comenzar a habitar su poder desde la intuición, el amor y la magia. Una experiencia íntima de Mundo Holístico USA en la energía sagrada de Mount Shasta.</p>
+          <span class="hero-tagline">De Amazona a Maga: vuelve a tu vientre, a tu voz interna y a tu energía creadora.</span>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#inversion">Quiero reservar mi cupo</a>
+            <a class="btn btn-outline" href="#faq">Tengo preguntas</a>
+          </div>
+          <p class="hero-micro">Retiro íntimo para mujeres mayores de edad · Cupos limitados · Dirección privada al confirmar inscripción</p>
+        </div>
+        <aside class="hero-card reveal">
+          <strong>4 días para volver a ti</strong>
+          <p>Círculos de fuego, temazcal, terapia de sonido, arte terapia, meditación, liberación ancestral, naturaleza y conexión con la energía sagrada de Mount Shasta.</p>
+        </aside>
+      </div>
+      <button class="scroll-cue" type="button" data-scroll="#hook"><span>Continúa</span><i class="scroll-line"></i></button>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-card reveal">
+          <div class="trust-item"><span>📍</span><div><strong>Mount Shasta</strong><small>Montaña, aire puro, flores de verano y espacios naturales.</small></div></div>
+          <div class="trust-item"><span>✨</span><div><strong>Proceso íntimo</strong><small>Retiro femenino con cupos limitados y acompañamiento cercano.</small></div></div>
+          <div class="trust-item"><span>🌙</span><div><strong>Preparación previa</strong><small>Reunión por Zoom antes del retiro para resolver dudas.</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section hook" id="hook">
+      <div class="container narrow reveal">
+        <span class="script">Tu cuerpo, tu historia y tu linaje te están hablando</span>
+        <h2>Quizá has cargado <em>demasiado tiempo</em> con más de lo que es tuyo</h2>
+        <p>Quizá has sentido que repites relaciones que duelen. Quizá cargas cansancio, culpa, síntomas, bloqueos o memorias que no sabes de dónde vienen. Quizá has tenido que ser fuerte durante tanto tiempo que olvidaste cómo se siente ser sostenida.</p>
+        <div class="hook-box"><p>Vientre Divino nace para mujeres que desean dejar de sobrevivir como amazonas heridas y comenzar a recordar su sabiduría como magas.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="para-quien">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Este retiro puede ser para ti</span>
+          <h2 class="title">¿Te reconoces <em>en esto?</em></h2>
+          <p class="copy">Si alguna de estas preguntas toca algo dentro de ti, este retiro puede ser una puerta para comprender, liberar y transformar.</p>
+        </div>
+        <div class="questions-grid">
+          <article class="question-card reveal"><p>¿Por qué repito relaciones tóxicas?</p></article>
+          <article class="question-card reveal"><p>¿Por qué me cuesta sentir paz en mis relaciones familiares?</p></article>
+          <article class="question-card reveal"><p>¿Por qué siento que cargo historias o heridas de mis ancestras?</p></article>
+          <article class="question-card reveal"><p>¿Por qué me cuesta recibir dinero, amor o apoyo?</p></article>
+          <article class="question-card reveal"><p>¿Por qué me cuesta relacionarme con otras mujeres?</p></article>
+          <article class="question-card reveal"><p>¿Por qué no disfruto plenamente mi sexualidad o mi cuerpo?</p></article>
+          <article class="question-card reveal"><p>¿Por qué tengo síntomas, dolores o bloqueos que no logro comprender?</p></article>
+          <article class="question-card reveal"><p>¿Por qué vivo cansada, rígida o en modo supervivencia?</p></article>
+          <article class="question-card reveal"><p>¿Por qué mi cuerpo o mi energía femenina se sienten en desequilibrio?</p></article>
+        </div>
+        <div class="questions-close reveal"><p>Cuando lo femenino y lo masculino dentro de ti pierden armonía, tu vida comienza a mostrarlo en el amor, la salud, el dinero, las relaciones y la forma en que habitas tu cuerpo.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="retiro">
+      <div class="container split">
+        <div class="image-stack reveal">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85" alt="Paisaje natural de montaña y bosque" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=700&q=85" alt="Flores silvestres de verano" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <span class="label">Lo femenino como medicina</span>
+          <h2 class="title">Volver a lo femenino no es debilidad. <em>Es sabiduría.</em></h2>
+          <p class="copy">Lo femenino es suavidad, intuición, pausa, creatividad, nutrición, escucha interna, amor, paciencia, sensibilidad y conexión con los ciclos.</p>
+          <p class="copy">Pero muchas mujeres aprendieron a sobrevivir desde la exigencia, el control, la dureza, el sacrificio y la desconexión del cuerpo.</p>
+          <p class="copy"><strong>Vientre Divino no es solo un retiro.</strong> Es una experiencia de reconexión femenina en Mount Shasta para mujeres que sienten que han cargado demasiado tiempo con relaciones tóxicas, patrones heredados, cansancio emocional, desconexión con su cuerpo, heridas del linaje femenino o una vida vivida desde la supervivencia.</p>
+          <div class="quote-card"><p>Isabela Tena te guía a reconocer esas memorias, comprenderlas y transformarlas desde un espacio seguro, íntimo y profundamente femenino.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="amazona-maga">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">La transformación central del retiro</span>
+          <h2 class="title">De Amazona <em>a Maga</em></h2>
+          <p class="copy">La travesía más poderosa que puedes vivir como mujer es la de volver a ti misma, sin negar la fuerza que te sostuvo, pero sin seguir viviendo desde la armadura.</p>
+        </div>
+        <div class="transform-grid">
+          <article class="transform-card reveal">
+            <h3>⚔️ La Amazona</h3>
+            <small>La mujer que ha sobrevivido</small>
+            <ul>
+              <li>No se permite descansar, siente que debe poder sola con todo.</li>
+              <li>Ha bloqueado su vulnerabilidad para sobrevivir.</li>
+              <li>Atrae relaciones donde termina ayudando, salvando o cargando.</li>
+              <li>Siente que su fortaleza se convirtió en armadura.</li>
+              <li>Sabe liderar, pero le cuesta recibir.</li>
+            </ul>
+          </article>
+          <article class="transform-card reveal">
+            <h3>✨ La Maga</h3>
+            <small>La mujer que recuerda</small>
+            <ul>
+              <li>Vuelve a su intuición y a su sabiduría ancestral.</li>
+              <li>Habita su suavidad sin sentirla como debilidad.</li>
+              <li>Reconoce su merecimiento y se permite recibir.</li>
+              <li>Sana desde el amor, no desde el sacrificio.</li>
+              <li>Se conecta con su poder creador y con su cuerpo.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="transform-note reveal">
+          <p>La transformación no consiste en rechazar a la Amazona interna. Consiste en honrar lo que hizo para protegerte, bajar la armadura y permitir que nazca la Maga.</p>
+          <div class="hero-actions" style="justify-content:center;"><a href="#inversion" class="btn btn-gold">Estoy lista para iniciar este camino</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Mount Shasta, agosto 2026</span>
+          <h2 class="title">Una experiencia de sanación femenina en la energía sagrada de Mount Shasta</h2>
+          <p class="copy">No vienes solo a escuchar teoría. Vienes a sentir, liberar, comprender e integrar a través de prácticas profundas y espacios de contención.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card reveal"><span class="experience-icon">🔥</span><h3>Círculo de Fuego</h3><p>Apertura de palabra, cantos, intención y contención del grupo.</p></article>
+          <article class="experience-card reveal"><span class="experience-icon">🏔️</span><h3>Mount Shasta</h3><p>Conexión con la montaña, la naturaleza, puntos energéticos y belleza de verano.</p></article>
+          <article class="experience-card reveal"><span class="experience-icon">🌿</span><h3>Temazcal</h3><p>Purificación, introspección y renacimiento simbólico en un espacio dirigido por mujeres.</p></article>
+          <article class="experience-card reveal"><span class="experience-icon">🌸</span><h3>Sanación del Útero</h3><p>Trabajo interno para liberar memorias, emociones y cargas ancestrales.</p></article>
+          <article class="experience-card reveal"><span class="experience-icon">🎵</span><h3>Terapia de Sonido</h3><p>Meditaciones guiadas y alquimia sonora dirigida por Isabela Tena.</p></article>
+          <article class="experience-card reveal"><span class="experience-icon">🎁</span><h3>Kit de Sanación</h3><p>Herramientas valoradas en $375 USD para continuar tu proceso en casa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mount-shasta">
+      <div class="container">
+        <div class="location-band reveal">
+          <span class="label">Ubicación sagrada</span>
+          <h2 class="title">Mount Shasta: naturaleza, silencio y energía para <em>volver a ti</em></h2>
+          <p class="copy">Mount Shasta será el escenario de este retiro: montaña, bosque, flores de verano, praderas y espacios naturales que invitan a la introspección. Durante la experiencia se visitarán lugares especiales de la zona, incluyendo espacios naturales como la Pradera de la Pantera y jardines meditativos.</p>
+          <div class="chips">
+            <span class="chip">❄️ Aire de montaña</span><span class="chip">🌸 Flores silvestres</span><span class="chip">⛰️ Pradera de la Pantera</span><span class="chip">🌙 Puntos energéticos</span><span class="chip">🔥 Temazcal</span>
+          </div>
+          <div class="privacy-box"><p>📍 <strong>Ubicación:</strong> Mount Shasta, California. Por privacidad y seguridad del grupo, la dirección exacta del campamento será compartida únicamente con las participantes inscritas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="isabela">
+      <div class="container">
+        <div class="guide-card reveal">
+          <div class="guide-photo" role="img" aria-label="Foto de Isabela Tena"></div>
+          <div>
+            <span class="label">Tu guía en esta travesía</span>
+            <h2 class="title">Isabela <em>Tena</em></h2>
+            <p class="copy">Hipnoterapeuta profesional, fundadora de Mundo Holístico USA y guía de procesos de transformación femenina. Isabela ha acompañado durante años a mujeres en caminos de sanación emocional, reconexión espiritual, trabajo ancestral, hipnoterapia y expansión de conciencia.</p>
+            <p class="copy">Este retiro nace de su propia historia, de su camino como mujer, madre, terapeuta y guía, y de años acompañando a mujeres a sanar, recordar su poder y transformar memorias profundas desde la conciencia.</p>
+            <div class="tags"><span class="tag">Hipnoterapia</span><span class="tag">Trabajo ancestral</span><span class="tag">Arte terapia</span><span class="tag">Terapia de sonido</span><span class="tag">Sanación femenina</span></div>
+            <div class="hero-actions"><a class="btn btn-primary" href="#inversion">Quiero vivir esta experiencia</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="itinerario">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Jueves 20 · Viernes 21 · Sábado 22 · Domingo 23</span>
+          <h2 class="title">Itinerario del <em>retiro</em></h2>
+          <p class="copy">Una ruta de llegada, apertura, trabajo interno, naturaleza, temazcal, liberación ancestral, integración y cierre.</p>
+        </div>
+        <div class="tabs reveal" role="tablist" aria-label="Itinerario por día">
+          <button class="tab is-active" type="button" data-tab="0">Jueves 20<small>Llegada</small></button>
+          <button class="tab" type="button" data-tab="1">Viernes 21<small>Naturaleza</small></button>
+          <button class="tab" type="button" data-tab="2">Sábado 22<small>Amazona a Maga</small></button>
+          <button class="tab" type="button" data-tab="3">Domingo 23<small>Integración</small></button>
+        </div>
+        <div class="panels reveal">
+          <article class="panel is-active">
+            <div class="day-card"><h3 class="day-title">Jueves 20 de agosto</h3><span class="day-subtitle">Llegada y apertura</span><div class="timeline">
+              <div class="tl-item"><span class="tl-time">3:00 pm</span><p class="tl-text"><strong>Entrada al campamento y bienvenida</strong>Acomodación, armado de tiendas de campaña y entrega del kit de bienvenida.</p></div>
+              <div class="tl-item"><span class="tl-time">5:00 pm</span><p class="tl-text"><strong>Apertura del círculo</strong>Fuego, palabra, cantos e intención de grupo.</p></div>
+              <div class="tl-item"><span class="tl-time">6:30 pm</span><p class="tl-text"><strong>Cena</strong>Preparada para el grupo.</p></div>
+              <div class="tl-item"><span class="tl-time">8:00 pm</span><p class="tl-text"><strong>Trabajo interno en círculo</strong>Primer encuentro profundo con el proceso de sanación.</p></div>
+              <div class="tl-item"><span class="tl-time">10:00 pm</span><p class="tl-text"><strong>Cierre y descanso</strong></p></div>
+            </div></div>
+          </article>
+          <article class="panel">
+            <div class="day-card"><h3 class="day-title">Viernes 21 de agosto</h3><span class="day-subtitle">Naturaleza, intención y temazcal</span><div class="timeline">
+              <div class="tl-item"><span class="tl-time">8:30 am</span><p class="tl-text"><strong>Desayuno</strong></p></div>
+              <div class="tl-item"><span class="tl-time">9:30 am</span><p class="tl-text"><strong>Día de campo en la montaña</strong>Meditación, intención de sanación y visita a puntos energéticos y espacios naturales.</p></div>
+              <div class="tl-item"><span class="tl-time">12:30 pm</span><p class="tl-text"><strong>Almuerzo por cuenta propia</strong>Restaurantes locales y tiempo para compras en el pueblo.</p></div>
+              <div class="tl-item"><span class="tl-time">4:00 pm</span><p class="tl-text"><strong>Temazcal</strong>Purificación, introspección y renacimiento simbólico.</p></div>
+              <div class="tl-item"><span class="tl-time">6:00 pm</span><p class="tl-text"><strong>Cena en el campamento</strong></p></div>
+              <div class="tl-item"><span class="tl-time">7:30 pm</span><p class="tl-text"><strong>Círculo de fuego + terapia de sonido</strong>Dirigida por Isabela Tena, introspección y explicación de la sanación del útero.</p></div>
+              <div class="tl-item"><span class="tl-time">10:30 pm</span><p class="tl-text"><strong>Descanso</strong></p></div>
+            </div></div>
+          </article>
+          <article class="panel">
+            <div class="day-card"><h3 class="day-title">Sábado 22 de agosto</h3><span class="day-subtitle">De Amazona a Maga</span><div class="timeline">
+              <div class="tl-item"><span class="tl-time">8:30 am</span><p class="tl-text"><strong>Desayuno</strong></p></div>
+              <div class="tl-item"><span class="tl-time">10:00 am</span><p class="tl-text"><strong>Clase De Amazona a Maga</strong>Terapias, arte terapia, meditación y conexión con los elementos.</p></div>
+              <div class="tl-item"><span class="tl-time">12:30 pm</span><p class="tl-text"><strong>Almuerzo</strong></p></div>
+              <div class="tl-item"><span class="tl-time">3:00 pm</span><p class="tl-text"><strong>Liberación ancestral</strong>Trabajo profundo con memorias y patrones del linaje femenino.</p></div>
+              <div class="tl-item"><span class="tl-time">6:30 pm</span><p class="tl-text"><strong>Cena</strong></p></div>
+              <div class="tl-item"><span class="tl-time">8:00 pm</span><p class="tl-text"><strong>Salida grupal hacia la montaña</strong>Terapia de sonido y meditación con alquimia.</p></div>
+              <div class="tl-item"><span class="tl-time">10:30 pm</span><p class="tl-text"><strong>Regreso al campamento y descanso</strong></p></div>
+            </div></div>
+          </article>
+          <article class="panel">
+            <div class="day-card"><h3 class="day-title">Domingo 23 de agosto</h3><span class="day-subtitle">Integración y cierre</span><div class="timeline">
+              <div class="tl-item"><span class="tl-time">8:30 am</span><p class="tl-text"><strong>Desayuno</strong></p></div>
+              <div class="tl-item"><span class="tl-time">10:00 am</span><p class="tl-text"><strong>Clase De Amazona a Maga · continuación</strong>Meditación, ejercicios de introspección y arte terapia.</p></div>
+              <div class="tl-item"><span class="tl-time">12:30 pm</span><p class="tl-text"><strong>Almuerzo</strong></p></div>
+              <div class="tl-item"><span class="tl-time">2:00 pm</span><p class="tl-text"><strong>Trabajo interno, terapia de sonido y cierre</strong>Explicación del uso del kit en casa.</p></div>
+              <div class="tl-item"><span class="tl-time">5:00 pm</span><p class="tl-text"><strong>Cierre del retiro</strong></p></div>
+              <div class="tl-item"><span class="tl-time">6:00 pm</span><p class="tl-text"><strong>Cena</strong></p></div>
+            </div></div>
+          </article>
+        </div>
+        <div class="note-box reveal"><span>🌙</span><p><strong>Nota sobre el checkout:</strong> se recomienda salir el lunes por la mañana. Después de un proceso profundo, es ideal reposar, integrar y darte un día más de calma.</p></div>
+      </div>
+    </section>
+
+    <section class="section price-section" id="inversion">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Inversión</span>
+          <h2 class="title">Reserva tu lugar en <em>Vientre Divino</em></h2>
+          <p class="copy">Retiro íntimo para mujeres mayores de edad, con cupos limitados y acompañamiento cercano durante toda la experiencia.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card reveal">
+            <span class="price-label">Inversión por persona</span>
+            <div class="price"><span>$</span>1,500</div>
+            <p class="copy">USD por persona. Incluye el proceso completo, comidas mencionadas, materiales, kit de sanación, lectura del aura, asistentes y chef para grupo.</p>
+            <ul class="includes">
+              <li>Todas las actividades mencionadas en el itinerario.</li>
+              <li>Campamento cómodo con duchas y agua caliente.</li>
+              <li>Comidas mencionadas como incluidas y coffee break.</li>
+              <li>Kit de sanación de útero valorado en $375 USD.</li>
+              <li>Foto y lectura del aura valorada en $275 USD.</li>
+              <li>Materiales de trabajo, asistentes, impuestos y chef para grupo.</li>
+            </ul>
+            <div class="price-actions">
+              <a class="btn btn-gold" href="https://wa.me/14086502198?text=Hola%2C%20me%20interesa%20reservar%20mi%20cupo%20para%20Vientre%20Divino.%20%C2%BFPodrian%20compartirme%20informacion%20y%20disponibilidad%3F" target="_blank" rel="noreferrer">Reservar mi cupo</a>
+              <a class="btn btn-outline" href="#faq">Resolver dudas</a>
+            </div>
+          </article>
+          <aside class="side-card reveal">
+            <h3>No incluye</h3>
+            <ul><li>Vuelos ni seguro de viaje.</li><li>Transporte.</li><li>Gastos personales.</li><li>Cualquier gasto extra no mencionado.</li></ul>
+            <div class="note-box" style="margin-top:22px;background:rgba(143,184,201,.08);border-color:rgba(143,184,201,.22);"><span>🏕️</span><p><strong>Hospedaje:</strong> la experiencia base es en campamento. Si deseas quedarte en cabaña, debes reservar con anticipación y traer tu ropa de cama y artículos de aseo personal.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Dudas frecuentes</span>
+          <h2 class="title">Antes de <em>reservar</em></h2>
+          <p class="copy">Información importante para que llegues preparada, segura y con claridad.</p>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq-item"><button class="faq-q" type="button">¿Puedo participar si no tengo útero o no tengo periodo menstrual?<span class="faq-icon">+</span></button><div class="faq-a"><p>Sí. No tener útero o menstruación no significa que hayas dejado de ser mujer ni que no existan emociones, memorias o procesos internos por trabajar.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Puedo participar en el temazcal si estoy con mi periodo?<span class="faq-icon">+</span></button><div class="faq-a"><p>Sí. El temazcal será dirigido por mujeres.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Puedo ir con mi hermana o mi hija?<span class="faq-icon">+</span></button><div class="faq-a"><p>Sí, siempre que sea mayor de edad y esté dispuesta a vivir el proceso de forma personal y consciente.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Puedo participar si tomo medicamentos?<span class="faq-icon">+</span></button><div class="faq-a"><p>Sí, siempre que informes previamente tu condición, los medicamentos que tomas y cuentes con seguro médico vigente o seguro de viaje con cobertura médica.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Dónde será exactamente el retiro?<span class="faq-icon">+</span></button><div class="faq-a"><p>Será en Mount Shasta, California. Por privacidad y seguridad, la dirección exacta será compartida únicamente con las participantes inscritas.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Puede acompañarme mi esposo o pareja?<span class="faq-icon">+</span></button><div class="faq-a"><p>Puede viajar contigo, pero no podrá permanecer ni dormir en el campamento. Este es un proceso personal e íntimo.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button">¿Habrá preparación antes del retiro?<span class="faq-icon">+</span></button><div class="faq-a"><p>Sí. Se realizará una reunión por Zoom aproximadamente un mes antes para preparar al grupo, resolver dudas y coordinar detalles logísticos.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container reveal">
+        <span class="label">El llamado está abierto</span>
+        <h2>Vuelve a tu vientre. Vuelve a tu intuición. <em>Vuelve a ti.</em></h2>
+        <p>No tienes que seguir viviendo desde la armadura. Puedes elegir un camino más suave, más consciente, más femenino y más tuyo.</p>
+        <div class="final-actions" style="justify-content:center;"><a class="btn btn-gold" href="https://wa.me/14086502198?text=Hola%2C%20siento%20el%20llamado%20de%20Vientre%20Divino%20y%20quiero%20mas%20informacion.%20%C2%BFPueden%20orientarme%20para%20reservar%3F" target="_blank" rel="noreferrer">Sí, quiero mi lugar</a><a class="btn btn-outline" href="#inicio">Volver arriba</a></div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/14086502198?text=Hola%2C%20quiero%20informacion%20sobre%20Vientre%20Divino.%20Me%20encantaria%20conocer%20detalles%20del%20retiro%2C%20fechas%20y%20proceso%20de%20reserva." target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp al +1 408 650-2198">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M16 .4C7.4.4.4 7.1.4 15.5c0 2.9.8 5.8 2.4 8.3L.4 31.6l8.1-2.3c2.3 1.3 4.9 2 7.6 2 8.6 0 15.6-6.7 15.6-15.1S24.6.4 16 .4zm0 28.3c-2.3 0-4.6-.6-6.5-1.9l-.5-.3-4.8 1.4 1.5-4.6-.3-.5c-1.4-2.1-2.1-4.5-2.1-7C3.3 8.6 8.9 3.2 16 3.2s12.7 5.4 12.7 12.1S23 28.7 16 28.7zm7-9.1c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.5-.2-.8.2s-.9 1.2-1.1 1.4-.4.3-.8.1c-.4-.2-1.6-.6-3-1.8-1.1-1-1.9-2.1-2.1-2.5-.2-.4 0-.6.1-.8.1-.1.3-.4.4-.6.1-.2.2-.4.3-.6.1-.2 0-.5 0-.6 0-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.3 3.6 5.7 5 .8.4 1.5.6 2 .8.8.2 1.5.2 2 .1.6-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8 0-.2-.3-.3-.7-.5z" />
+    </svg>
+    <span class="wa-float-text"><small>Escribenos</small><strong>WhatsApp +1 408 650-2198</strong></span>
+  </a>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>Vientre Divino</strong><span>Mundo Holístico USA · Mount Shasta, California</span></div>
+      <div>© 2026 · Dirección privada para participantes inscritas · WhatsApp +1 (408) 650-2198</div>
+    </div>
+  </footer>
+
+  <script>
+    const scrollProgress = document.querySelector('#scrollProgress');
+    const header = document.querySelector('#header');
+    const menuBtn = document.querySelector('#menuBtn');
+    const navLinks = document.querySelector('#navLinks');
+
+    function updateScrollUI() {
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      scrollProgress.style.width = `${progress}%`;
+    }
+    updateScrollUI();
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        menuBtn.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.querySelectorAll('[data-scroll]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelector(button.dataset.scroll)?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const index = Number(tab.dataset.tab);
+        tabs.forEach((item) => item.classList.remove('is-active'));
+        panels.forEach((panel) => panel.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        panels[index].classList.add('is-active');
+      });
+    });
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      const button = item.querySelector('.faq-q');
+      const answer = item.querySelector('.faq-a');
+      button.addEventListener('click', () => {
+        const open = item.classList.toggle('is-open');
+        answer.style.maxHeight = open ? `${answer.scrollHeight}px` : '0px';
+      });
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
