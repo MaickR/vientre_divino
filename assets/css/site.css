@@ -358,7 +358,7 @@
       background-image:
         radial-gradient(circle at 65% 20%, rgba(201, 167, 106, .16), transparent 30%),
         linear-gradient(160deg, rgba(16, 43, 58, .82) 0%, rgba(35, 77, 99, .55) 45%, rgba(111, 61, 86, .48) 100%),
-        url("img/banner.png");
+        url("../../img/banner.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center 30%;
@@ -568,11 +568,18 @@
     /* HOOK */
     .hook {
       background:
-        radial-gradient(circle at 90% 0%, rgba(201, 167, 106, .18), transparent 30%),
-        radial-gradient(circle at 0% 100%, rgba(143, 184, 201, .18), transparent 30%),
-        linear-gradient(135deg, var(--azul-noche), var(--azul-profundo));
+        radial-gradient(circle at 90% 0%, rgba(201, 167, 106, .2), transparent 32%),
+        radial-gradient(circle at 0% 100%, rgba(143, 184, 201, .2), transparent 34%),
+        linear-gradient(135deg, rgba(16, 43, 58, .74), rgba(31, 78, 102, .72)),
+        url("../../img/shasta-img.png") center 44% / cover no-repeat;
       color: var(--marfil);
       text-align: center;
+    }
+    @media (max-width: 559px) {
+      .hook { background-position: 90% 0, 0 100%, center, 56% 44%; }
+    }
+    @media (min-width: 560px) and (max-width: 1019px) {
+      .hook { background-position: 90% 0, 0 100%, center, center 42%; }
     }
     .hook .script { color: var(--dorado); }
     .hook h2 {
@@ -821,33 +828,33 @@
     }
     .experience-card:nth-child(1) {
       background:
-        linear-gradient(rgba(23,38,30,.18), rgba(23,38,30,.35)),
-        url("img/circulo-fuego.png") center 42% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .22), rgba(16, 43, 58, .42)),
+        url("../../img/circulo-fuego.png") center 42% / cover no-repeat;
     }
     .experience-card:nth-child(2) {
       background:
-        linear-gradient(rgba(23,38,30,.16), rgba(23,38,30,.34)),
-        url("img/mount-shasta-bg.png") center 38% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .2), rgba(16, 43, 58, .4)),
+        url("../../img/mount-shasta-bg.png") center 38% / cover no-repeat;
     }
     .experience-card:nth-child(3) {
       background:
-        linear-gradient(rgba(23,38,30,.18), rgba(23,38,30,.34)),
-        url("img/temazcal.png") center 36% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .22), rgba(16, 43, 58, .4)),
+        url("../../img/temazcal.png") center 36% / cover no-repeat;
     }
     .experience-card:nth-child(4) {
       background:
-        linear-gradient(rgba(23,38,30,.17), rgba(23,38,30,.33)),
-        url("img/sanazion-utero.jpg") center 40% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .2), rgba(16, 43, 58, .38)),
+        url("../../img/sanazion-utero.jpg") center 40% / cover no-repeat;
     }
     .experience-card:nth-child(5) {
       background:
-        linear-gradient(rgba(23,38,30,.16), rgba(23,38,30,.33)),
-        url("img/terapia-sonido.png") center 34% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .2), rgba(16, 43, 58, .38)),
+        url("../../img/terapia-sonido.png") center 34% / cover no-repeat;
     }
     .experience-card:nth-child(6) {
       background:
-        linear-gradient(rgba(23,38,30,.16), rgba(23,38,30,.32)),
-        url("img/kit.png") center 44% / cover no-repeat;
+        linear-gradient(rgba(16, 43, 58, .2), rgba(16, 43, 58, .36)),
+        url("../../img/kit.png") center 44% / cover no-repeat;
     }
     @media (max-width: 559px) {
       .experience-card:nth-child(1) { background-position: center 46%, center 46%; }
@@ -866,6 +873,255 @@
     }
     .experience-card p { margin-top: 8px; color: rgba(255, 250, 242, .82); font-size: clamp(.96rem, .9rem + .18vw, 1.03rem); }
 
+    /* SHASTA FOCUS + PROOF GALLERY */
+    .shasta-focus {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(201, 82, 140, .16), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(127, 184, 206, .18), transparent 38%),
+        linear-gradient(140deg, #f7fbff 0%, #fff6f9 52%, #f3f8ff 100%);
+    }
+    .shasta-wrap {
+      display: grid;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .shasta-copy {
+      padding: 26px;
+      border-radius: var(--radio-xl);
+      background: rgba(255, 249, 241, .85);
+      border: 1px solid rgba(31, 78, 102, .14);
+      box-shadow: var(--sombra-card);
+    }
+    .shasta-copy .title {
+      margin-top: 10px;
+      font-size: clamp(2rem, 5.2vw, 3.2rem);
+      line-height: .96;
+    }
+    .shasta-copy .copy {
+      margin-top: 14px;
+      max-width: none;
+    }
+    .shasta-media-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .shasta-photo {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 78, 102, .13);
+      box-shadow: 0 16px 34px rgba(16, 43, 58, .12);
+      background: #dcecf3;
+      cursor: zoom-in;
+    }
+    .shasta-photo img {
+      width: 100%;
+      height: clamp(180px, 36vw, 280px);
+      object-fit: cover;
+      object-position: center;
+      transition: transform .4s ease;
+    }
+    .shasta-photo:hover img { transform: scale(1.03); }
+
+    @media (max-width: 559px) {
+      .shasta-media-grid { grid-template-columns: 1fr; }
+      .shasta-photo img { height: clamp(220px, 58vw, 320px); }
+    }
+
+    @media (min-width: 1020px) {
+      .shasta-wrap {
+        grid-template-columns: .95fr 1.05fr;
+        align-items: stretch;
+      }
+      .shasta-copy {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .shasta-media-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        height: 100%;
+      }
+      .shasta-photo {
+        min-height: 0;
+      }
+      .shasta-photo img {
+        height: 100%;
+        min-height: 0;
+      }
+    }
+
+    .proof-gallery {
+      background:
+        radial-gradient(circle at 15% 0%, rgba(201, 167, 106, .16), transparent 32%),
+        radial-gradient(circle at 85% 100%, rgba(127, 184, 206, .18), transparent 34%),
+        #f7fbff;
+    }
+    .proof-gallery-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .proof-shot {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 78, 102, .13);
+      box-shadow: 0 14px 30px rgba(16, 43, 58, .11);
+      background: #dceaf2;
+      min-height: 160px;
+      cursor: zoom-in;
+    }
+    .proof-shot img {
+      width: 100%;
+      height: 100%;
+      min-height: 160px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+    .proof-shot:hover img { transform: scale(1.04); }
+
+    .lightbox-open {
+      overflow: hidden;
+    }
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2200;
+      display: grid;
+      place-items: center;
+      padding: clamp(12px, 2.2vw, 26px);
+      background: rgba(8, 18, 24, .86);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease;
+    }
+    .lightbox.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox__panel {
+      position: relative;
+      width: min(96vw, 1180px);
+      max-height: 94vh;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+    .lightbox__frame {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(8, 18, 24, .62);
+      box-shadow: 0 26px 58px rgba(0, 0, 0, .34);
+    }
+    .lightbox__image {
+      display: block;
+      width: 100%;
+      max-height: calc(94vh - 96px);
+      object-fit: contain;
+      object-position: center;
+      margin-inline: auto;
+      background: rgba(8, 18, 24, .35);
+    }
+    .lightbox__caption {
+      margin: 0;
+      color: rgba(255, 255, 255, .92);
+      text-align: center;
+      font-size: clamp(.88rem, .83rem + .18vw, 1rem);
+      line-height: 1.5;
+      max-width: min(90vw, 78ch);
+      padding-inline: 10px;
+    }
+    .lightbox__button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .44);
+      border-radius: 999px;
+      background: rgba(8, 18, 24, .64);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+      user-select: none;
+      touch-action: manipulation;
+    }
+    .lightbox__button:hover {
+      background: rgba(14, 33, 44, .86);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .lightbox__button:focus-visible,
+    .lightbox__close:focus-visible {
+      outline: 2px solid rgba(201, 167, 106, .95);
+      outline-offset: 2px;
+    }
+    .lightbox__button--prev {
+      left: clamp(4px, 1.5vw, 14px);
+    }
+    .lightbox__button--next {
+      right: clamp(4px, 1.5vw, 14px);
+    }
+    .lightbox__close {
+      position: absolute;
+      top: clamp(4px, 1.5vw, 12px);
+      right: clamp(4px, 1.5vw, 12px);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .48);
+      background: rgba(8, 18, 24, .7);
+      color: #fff;
+      font-size: 1.3rem;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background .2s ease;
+      touch-action: manipulation;
+    }
+    .lightbox__close:hover {
+      background: rgba(14, 33, 44, .9);
+    }
+
+    @media (max-width: 719px) {
+      .lightbox {
+        padding: 10px;
+      }
+      .lightbox__panel {
+        width: 100%;
+      }
+      .lightbox__frame {
+        border-radius: 14px;
+      }
+      .lightbox__image {
+        max-height: calc(100vh - 140px);
+      }
+      .lightbox__button {
+        width: 40px;
+        height: 40px;
+      }
+      .lightbox__button--prev {
+        left: 2px;
+      }
+      .lightbox__button--next {
+        right: 2px;
+      }
+      .lightbox__close {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
     /* LOCATION */
     .location-band {
       position: relative;
@@ -875,7 +1131,7 @@
       color: var(--marfil);
       background:
         linear-gradient(90deg, rgba(16, 43, 58, .92), rgba(31, 78, 102, .5)),
-        url("img/mount-shasta-nature.png") center 42% / cover no-repeat;
+        url("../../img/mount-shasta-nature.png") center 42% / cover no-repeat;
       box-shadow: var(--sombra-suave);
     }
     @media (max-width: 559px) {
@@ -937,7 +1193,7 @@
       position: relative;
       background:
         linear-gradient(180deg, rgba(31, 78, 102, .06), rgba(31, 78, 102, .2)),
-        url("img/isabela-tena.png") center 32% / cover no-repeat;
+        url("../../img/isabela-tena.png") center 32% / cover no-repeat;
     }
     @media (max-width: 559px) {
       .guide-photo {
@@ -989,7 +1245,7 @@
       transition: color .24s ease, background .24s ease, border-color .24s ease;
     }
     .tab small { display: block; margin-top: 3px; font-size: .72rem; font-weight: 500; letter-spacing: 0; text-transform: none; opacity: .72; }
-    .tab.is-active { color: var(--azul-noche); border-bottom-color: var(--arcilla); background: rgba(168, 191, 163, .12); }
+    .tab.is-active { color: var(--azul-noche); border-bottom-color: var(--arcilla); background: rgba(111, 174, 196, .14); }
     .panel { display: none; }
     .panel.is-active { display: block; }
     .day-card {
@@ -1043,7 +1299,7 @@
       padding: 18px;
       border-radius: var(--radio-lg);
       border: 1px dashed rgba(31, 78, 102, .22);
-      background: rgba(168, 191, 163, .13);
+      background: rgba(111, 174, 196, .13);
       color: var(--texto-suave);
     }
     .note-mark {
@@ -1209,7 +1465,7 @@
       color: var(--marfil);
       background-image:
         linear-gradient(180deg, rgba(16, 43, 58, .72), rgba(16, 43, 58, .92)),
-        url("img/sana.png");
+        url("../../img/sana.png");
       background-repeat: no-repeat;
       background-size: auto, cover;
       background-position: center, center 42%;
@@ -1410,6 +1666,8 @@
       .hero-inner { grid-template-columns: 1fr; align-items: center; }
       .scroll-cue { display: flex; }
       .split { grid-template-columns: .9fr 1.1fr; }
+      .shasta-wrap { grid-template-columns: .95fr 1.05fr; }
+      .proof-gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .transform-grid {
         grid-template-columns: repeat(2, minmax(280px, 1fr));
         justify-items: stretch;

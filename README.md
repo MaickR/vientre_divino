@@ -1,97 +1,129 @@
 # Vientre Divino
 
-Landing page oficial del retiro Vientre Divino, diseñado para una experiencia
-emocional, elegante y orientada a conversión.
+Landing page bilingue (ES/EN) para el retiro Vientre Divino en Mount Shasta.
+Disenada para conversion, confianza y claridad narrativa.
 
-## Resumen
+> [!NOTE]
+> Proyecto estatico optimizado para carga rapida, experiencia mobile-first y mantenimiento simple.
 
-Este proyecto presenta una experiencia web bilingue (ES/EN) para promocionar un
-retiro femenino en Mount Shasta. Incluye narrativa de marca, secciones de valor,
-itinerario, inversion, FAQ y llamadas a la accion conectadas a WhatsApp.
+## Estado del Proyecto
 
-## Objetivos del Sitio
+| Area | Estado |
+|---|---|
+| Pagina en espanol | Lista |
+| Pagina en ingles | Lista |
+| Responsive (mobile/tablet/desktop) | Verificado |
+| Lightbox de galerias | Implementado |
+| Integracion WhatsApp | Activa |
 
-- Comunicar con claridad la propuesta del retiro.
-- Guiar a la usuaria desde interes hasta contacto directo.
-- Mantener una experiencia visual premium en movil y escritorio.
-- Sostener coherencia de marca en espanol e ingles.
-
-## Stack Tecnico
-
-- HTML5 semantico
-- CSS3 (variables, grid, flex, responsive)
-- JavaScript vanilla
-- AOS (Animate On Scroll) via CDN
-
-## Caracteristicas Clave
-
-- Version completa en espanol: [index.html](index.html)
-- Version completa en ingles: [index-en.html](index-en.html)
-- Navegacion adaptativa (menu movil y desktop)
-- Secciones interactivas: tabs de itinerario y acordeon FAQ
-- Animaciones suaves y optimizadas con AOS
-- Botones de conversion con mensaje prellenado a WhatsApp
-- Mejoras anti-desbordamiento horizontal en todo el layout
-
-## Estructura del Proyecto
+## Arquitectura
 
 ```text
 vientre_divino/
 |- index.html
 |- index-en.html
 |- README.md
+|- assets/
+|  |- css/
+|  |  |- site.css
+|  |- js/
+|     |- site.js
 |- img/
 ```
 
+```mermaid
+flowchart TD
+		A[index.html / index-en.html] --> B[assets/css/site.css]
+		A --> C[assets/js/site.js]
+		A --> D[img/*]
+		C --> E[AOS + interacciones UI]
+		C --> F[Lightbox galerias]
+```
+
+## Experiencia y Producto
+
+### Propuesta UX
+
+- Narrativa emocional con progresion de secciones orientada a conversion.
+- Identidad visual consistente con paleta de marca y acentos editoriales.
+- Priorizacion de contenido real: Mount Shasta + evidencia de retiros previos.
+- Interacciones claras: menu adaptativo, tabs, FAQ, CTA a WhatsApp.
+
+### Componentes principales
+
+- Hero con mensaje central y llamadas a la accion.
+- Seccion Shasta Focus con galeria visual ampliada.
+- Seccion Proof Gallery con fotografias de experiencias previas.
+- Itinerario por dias (tabs) y preguntas frecuentes (acordeon).
+- Lightbox responsive con:
+	- apertura al hacer click en imagen
+	- navegacion anterior/siguiente
+	- cierre por X, click fuera y tecla Esc
+
+## Stack Tecnico
+
+- HTML5 semantico
+- CSS3 (variables, grid, flex, breakpoints)
+- JavaScript vanilla (sin framework)
+- AOS via CDN para animaciones de entrada
+
 ## Ejecutar en Local
 
-Opcion directa:
+### Opcion 1: apertura directa
 
-```bash
+```powershell
 start index.html
 ```
 
-Opcion con servidor local:
+### Opcion 2: servidor local recomendado
 
-```bash
+```powershell
 python -m http.server 8000
 ```
 
-Luego abrir:
+Abrir en navegador:
 
 ```text
 http://localhost:8000
 ```
 
-## Guia de Edicion Rapida
+## Operacion y Mantenimiento
 
-- Contenido principal: editar secciones HTML en [index.html](index.html) y
-	[index-en.html](index-en.html).
-- Estilos: variables y componentes al inicio del bloque style de cada archivo.
-- Contacto WhatsApp: buscar `wa.me/14086502198` y actualizar enlaces.
-- Imagenes: reemplazar archivos dentro de `img/` manteniendo nombres o
-	actualizando rutas.
+### Puntos de edicion rapida
 
-## Calidad y Responsividad
+- Contenido ES: [index.html](index.html)
+- Contenido EN: [index-en.html](index-en.html)
+- Estilos globales: [assets/css/site.css](assets/css/site.css)
+- Interacciones globales: [assets/js/site.js](assets/js/site.js)
+- Recursos visuales: carpeta [img/](img/)
 
-El proyecto fue ajustado para evitar scroll lateral no deseado y mantener
-compatibilidad en resoluciones pequenas. Se aplican reglas de contencion para
-media, contenedores, grids y textos largos.
+### Convenciones recomendadas
 
-## Despliegue
+- Mantener rutas de imagen coherentes con la ubicacion del CSS.
+- Preservar paridad funcional ES/EN en cada cambio.
+- Validar en tres anchos minimos: 390px, 768px, 1280px.
+
+## Roadmap Sugerido
+
+- [ ] Agregar analitica de conversion (eventos CTA).
+- [ ] Implementar metadata social Open Graph y Twitter Cards.
+- [ ] Incorporar Lighthouse CI en pipeline.
+- [ ] Optimizar imagenes criticas en formatos AVIF/WebP cuando aplique.
+
+## Git y Despliegue
 
 Repositorio remoto:
 
 - https://github.com/MaickR/vientre_divino.git
 
-Flujo basico:
+Flujo estandar:
 
 ```bash
 git add .
-git commit -m "tu mensaje"
+git commit -m "mensaje"
 git push origin main
 ```
 
 ## Licencia
 
-Uso privado/proyecto propietario salvo indicacion contraria del autor.
+Proyecto de uso privado/propietario, salvo indicacion expresa del autor.

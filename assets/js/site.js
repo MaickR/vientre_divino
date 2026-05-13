@@ -142,3 +142,116 @@
         if (window.AOS) AOS.refresh();
       });
     });
+
+    const galleryImageNodes = Array.from(
+      document.querySelectorAll('.shasta-focus .shasta-photo img, .proof-gallery .proof-shot img')
+    );
+
+    if (galleryImageNodes.length) {
+      const isSpanish = (document.documentElement.lang || '').toLowerCase().startsWith('es');
+      const labels = isSpanish
+        ? {
+            dialog: 'Visor de imagenes',
+            close: 'Cerrar visor',
+            prev: 'Imagen anterior',
+            next: 'Siguiente imagen',
+            fallbackAlt: 'Imagen de galeria',
+            openSuffix: 'Abrir visor'
+          }
+        : {
+            dialog: 'Image viewer',
+            close: 'Close image viewer',
+            prev: 'Previous image',
+            next: 'Next image',
+            fallbackAlt: 'Gallery image',
+            openSuffix: 'Open viewer'
+          };
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox';
+      lightbox.setAttribute('role', 'dialog');
+      lightbox.setAttribute('aria-modal', 'true');
+      lightbox.setAttribute('aria-label', labels.dialog);
+      lightbox.innerHTML = `
+        <div class="lightbox__panel">
+          <button class="lightbox__close" type="button" aria-label="${labels.close}">&times;</button>
+          <button class="lightbox__button lightbox__button--prev" type="button" aria-label="${labels.prev}">&#10094;</button>
+          <div class="lightbox__frame">
+            <img class="lightbox__image" src="" alt="" loading="eager" decoding="sync" />
+          </div>
+          <button class="lightbox__button lightbox__button--next" type="button" aria-label="${labels.next}">&#10095;</button>
+          <p class="lightbox__caption"></p>
+        </div>
+      `;
+      document.body.appendChild(lightbox);
+
+      const lightboxPanel = lightbox.querySelector('.lightbox__panel');
+      const lightboxImage = lightbox.querySelector('.lightbox__image');
+      const lightboxCaption = lightbox.querySelector('.lightbox__caption');
+      const closeButton = lightbox.querySelector('.lightbox__close');
+      const prevButton = lightbox.querySelector('.lightbox__button--prev');
+      const nextButton = lightbox.querySelector('.lightbox__button--next');
+      let activeIndex = 0;
+      let lastFocusedElement = null;
+
+      function showImage(index) {
+        const normalizedIndex = (index + galleryImageNodes.length) % galleryImageNodes.length;
+        const sourceImage = galleryImageNodes[normalizedIndex];
+        activeIndex = normalizedIndex;
+        lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
+        lightboxImage.alt = sourceImage.alt || labels.fallbackAlt;
+        lightboxCaption.textContent = sourceImage.alt || '';
+      }
+
+      function openLightbox(index) {
+        lastFocusedElement = document.activeElement;
+        showImage(index);
+        lightbox.classList.add('is-open');
+        document.body.classList.add('lightbox-open');
+        closeButton.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.classList.remove('lightbox-open');
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+      }
+
+      galleryImageNodes.forEach((img, index) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', `${img.alt || labels.fallbackAlt} - ${labels.openSuffix}`);
+        img.addEventListener('click', () => openLightbox(index));
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      prevButton.addEventListener('click', () => showImage(activeIndex - 1));
+      nextButton.addEventListener('click', () => showImage(activeIndex + 1));
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', (event) => {
+        if (!lightboxPanel.contains(event.target)) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (event.key === 'Escape') {
+          closeLightbox();
+        }
+        if (event.key === 'ArrowLeft') {
+          showImage(activeIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          showImage(activeIndex + 1);
+        }
+      });
+    }
