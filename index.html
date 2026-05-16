@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <link rel="preload" as="image" href="img/banner.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/webp/banner.webp" fetchpriority="high" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <style>
     :root {
@@ -137,6 +137,10 @@
         radial-gradient(circle at 65% 20%, rgba(201, 167, 106, .16), transparent 30%),
         linear-gradient(160deg, rgba(16, 43, 58, .82) 0%, rgba(35, 77, 99, .55) 45%, rgba(111, 61, 86, .48) 100%),
         url("img/banner.png");
+      background-image:
+        radial-gradient(circle at 65% 20%, rgba(201, 167, 106, .16), transparent 30%),
+        linear-gradient(160deg, rgba(16, 43, 58, .82) 0%, rgba(35, 77, 99, .55) 45%, rgba(111, 61, 86, .48) 100%),
+        image-set(url("img/webp/banner.webp") type("image/webp"), url("img/banner.png") type("image/png"));
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center 30%;
@@ -225,7 +229,7 @@
   <header class="header" id="header">
     <div class="container nav-wrap">
       <a href="#inicio" class="brand" aria-label="Mundo Holístico USA inicio">
-        <img src="img/logo-Mundoholistico.png" width="223" height="191" decoding="async" fetchpriority="high" alt="Mundo Holístico USA" class="brand__logo">
+        <img src="img/webp/logo-Mundoholistico.webp" width="223" height="191" decoding="async" fetchpriority="high" alt="Mundo Holístico USA" class="brand__logo">
         <div class="brand__text">
           <span class="brand__title">Mundo</span>
           <span class="brand__subtitle">Holístico USA</span>
@@ -335,8 +339,14 @@
     <section class="section" id="retiro">
       <div class="container split">
         <div class="image-stack reveal">
-          <img class="image-stack__main" src="img/isa-tena.jfif" width="1122" height="1402" decoding="async" alt="Isabela Tena en retrato" loading="lazy" />
-          <img src="img/vientre.png" width="1122" height="1402" decoding="async" alt="Flores silvestres de verano" loading="lazy" />
+          <picture class="image-stack__main">
+            <source type="image/webp" srcset="img/webp/tena-foto.webp" />
+            <img class="image-stack__main" src="img/tena-foto.jpeg" width="1122" height="1402" decoding="async" alt="Isabela Tena en retrato" loading="lazy" />
+          </picture>
+          <picture class="image-stack__secondary">
+            <source type="image/webp" srcset="img/webp/vientre.webp" />
+            <img src="img/vientre.png" width="1122" height="1402" decoding="async" alt="Flores silvestres de verano" loading="lazy" />
+          </picture>
         </div>
         <div class="reveal">
           <span class="label">Lo femenino como medicina</span>
@@ -416,11 +426,11 @@
           <p class="copy"><strong>Vientre Divino es una invitación a volver al cuerpo, al vientre, al linaje y a la sabiduría interna, acompañada por la fuerza sagrada de la montaña.</strong></p>
         </div>
         <div class="shasta-media-grid">
-          <figure class="shasta-photo reveal"><img src="img/shasta.png" alt="Vista rosada de Mount Shasta" loading="lazy" decoding="async" /></figure>
-          <figure class="shasta-photo reveal"><img src="img/sunrise-shasta.png" alt="Luz de amanecer sobre Mount Shasta" loading="lazy" decoding="async" /></figure>
-          <figure class="shasta-photo reveal"><img src="img/isa-shasta-night.jpeg" alt="Noche en Mount Shasta" loading="lazy" decoding="async" /></figure>
-          <figure class="shasta-photo reveal"><img src="img/mount-shasta-bg.png" alt="Paisaje panoramico de Mount Shasta" loading="lazy" decoding="async" /></figure>
-          <figure class="shasta-photo reveal"><img src="img/shasta-img.png" alt="Escena natural de Mount Shasta" loading="lazy" decoding="async" /></figure>
+          <figure class="shasta-photo reveal"><picture><source type="image/webp" srcset="img/webp/shasta.webp" /><img src="img/shasta.png" alt="Vista rosada de Mount Shasta" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="shasta-photo reveal"><picture><source type="image/webp" srcset="img/webp/sunrise-shasta.webp" /><img src="img/sunrise-shasta.png" alt="Luz de amanecer sobre Mount Shasta" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="shasta-photo reveal"><picture><source type="image/webp" srcset="img/webp/isa-shasta-night.webp" /><img src="img/isa-shasta-night.jpeg" alt="Noche en Mount Shasta" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="shasta-photo reveal"><picture><source type="image/webp" srcset="img/webp/mount-shasta-bg.webp" /><img src="img/mount-shasta-bg.png" alt="Paisaje panoramico de Mount Shasta" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="shasta-photo reveal"><picture><source type="image/webp" srcset="img/webp/shasta-img.webp" /><img src="img/shasta-img.png" alt="Escena natural de Mount Shasta" loading="lazy" decoding="async" /></picture></figure>
           <figure class="shasta-photo reveal"><img src="img/mount-shasta-nature.png" alt="Naturaleza de Mount Shasta" loading="lazy" decoding="async" /></figure>
         </div>
       </div>
@@ -434,13 +444,13 @@
           <p class="copy">Estas fotografías muestran momentos reales de procesos ya vividos con Isabela. No son ideas abstractas: son prueba de que este trabajo ha acompañado a mujeres antes, con presencia, experiencia y resultados que se sienten.</p>
         </div>
         <div class="proof-gallery-grid">
-          <figure class="proof-shot reveal"><img src="img/experience.jpeg" alt="Experiencia real de retiro con Isabela" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-1.jpeg" alt="Participantes en retiro anterior con Isabela 1" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-2.jpeg" alt="Participantes en retiro anterior con Isabela 2" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-3.jpeg" alt="Participantes en retiro anterior con Isabela 3" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-5.jpeg" alt="Participantes en retiro anterior con Isabela 5" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-6.jpeg" alt="Participantes en retiro anterior con Isabela 6" loading="lazy" decoding="async" /></figure>
-          <figure class="proof-shot reveal"><img src="img/experience-7.jpeg" alt="Participantes en retiro anterior con Isabela 7" loading="lazy" decoding="async" /></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience.webp" /><img src="img/experience.jpeg" alt="Experiencia real de retiro con Isabela" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-1.webp" /><img src="img/experience-1.jpeg" alt="Participantes en retiro anterior con Isabela 1" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-2.webp" /><img src="img/experience-2.jpeg" alt="Participantes en retiro anterior con Isabela 2" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-3.webp" /><img src="img/experience-3.jpeg" alt="Participantes en retiro anterior con Isabela 3" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-5.webp" /><img src="img/experience-5.jpeg" alt="Participantes en retiro anterior con Isabela 5" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-6.webp" /><img src="img/experience-6.jpeg" alt="Participantes en retiro anterior con Isabela 6" loading="lazy" decoding="async" /></picture></figure>
+          <figure class="proof-shot reveal"><picture><source type="image/webp" srcset="img/webp/experience-7.webp" /><img src="img/experience-7.jpeg" alt="Participantes en retiro anterior con Isabela 7" loading="lazy" decoding="async" /></picture></figure>
         </div>
       </div>
     </section>
@@ -463,7 +473,10 @@
       <div class="container">
         <div class="guide-card reveal">
           <div class="guide-photo">
-            <img class="guide-photo__img" src="img/tena-foto.jpeg" alt="Foto de Isabela Tena" loading="lazy" decoding="async" />
+            <picture>
+              <source type="image/webp" srcset="img/webp/tena-foto.webp" />
+              <img class="guide-photo__img" src="img/tena-foto.jpeg" alt="Foto de Isabela Tena" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div>
             <span class="label">Tu guía en esta travesía</span>
