@@ -1,0 +1,16 @@
+﻿Audit Results - 2026-05-16 11:21:23
+
+--- Audit for index.html ---
+WhatsApp at line 578: Hola, quiero reservar mi lugar para Vientre Divino (20 al 23 de agosto 2026 en Mount Shasta)
+WhatsApp at line 616: Hola, siento el llamado de Vientre Divino
+WhatsApp at line 621: Hola, quiero informacion de Vientre Divino en Mount Shasta (20 al 23 de agosto 2026)
+WhatsApp at line 643: Hola, me interesa Vientre Divino del 20 al 23 de agosto 2026
+
+--- Audit for index-en.html ---
+WhatsApp at line 578: Hi, I want to reserve my spot for Vientre Divino (August 20-23, 2026 in Mount Shasta)
+WhatsApp at line 616: Hi, I feel called to join Vientre Divino
+WhatsApp at line 621: Hi, I would like information about Vientre Divino in Mount Shasta (August 20-23, 2026)
+WhatsApp at line 643: Hi, I am interested in Vientre Divino for August 20-23, 2026
+
+FINAL STATUS: ALL OK
+
