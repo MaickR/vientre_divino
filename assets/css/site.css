@@ -1768,15 +1768,19 @@
 
     @media (max-width: 425px) {
       .hero-badge {
-        display: flex;
-        width: max-content;
+        display: inline-flex;
+        justify-content: center;
+        width: fit-content;
+        max-width: calc(100% - 24px);
         margin-inline: auto;
-        padding: 7px 12px;
-        gap: 7px;
-        font-size: .58rem;
-        letter-spacing: .06em;
-        line-height: 1;
-        white-space: nowrap;
+        padding: 8px 12px;
+        gap: 6px;
+        font-size: .62rem;
+        letter-spacing: .045em;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+        text-wrap: balance;
       }
       .hero-badge::before {
         width: 6px;
