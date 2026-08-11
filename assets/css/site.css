@@ -188,6 +188,10 @@
       font-size: .72rem;
       letter-spacing: .12em;
       border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(180, 130, 60, .18), inset 0 1px 0 rgba(255,240,190,.35);
+    }
+    .btn-nav-cta:hover {
+      box-shadow: 0 8px 18px rgba(180, 130, 60, .24), inset 0 1px 0 rgba(255,240,190,.35);
     }
     .lang-switch {
       min-height: 42px;
@@ -211,6 +215,8 @@
       left: 0;
       right: 0;
       z-index: 1000;
+      isolation: isolate;
+      overflow: visible;
       padding: 14px 0;
       transition: padding .28s ease, background .28s ease, box-shadow .28s ease, backdrop-filter .28s ease;
     }
@@ -290,7 +296,7 @@
       opacity: 0;
       pointer-events: none;
       transition: transform .22s ease, opacity .22s ease;
-      z-index: 1001;
+      z-index: 5000;
     }
     .nav-links.is-open {
       transform: translateY(0) scale(1);
@@ -1393,7 +1399,6 @@
     .price-section {
       position: relative;
       overflow: hidden;
-      isolation: isolate;
       background:
         radial-gradient(120% 90% at 100% 0%, rgba(197, 82, 140, .22), transparent 56%),
         radial-gradient(90% 80% at 0% 100%, rgba(201, 167, 106, .2), transparent 58%),

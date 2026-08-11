@@ -1,42 +1,54 @@
 # Vientre Divino
 
-[![Estado](https://img.shields.io/badge/estado-produccion-1f6f8b)](#estado) [![Idioma](https://img.shields.io/badge/idioma-ES%20%7C%20EN-0c6d62)](#contenido) [![Stack](https://img.shields.io/badge/stack-HTML%2FCSS%2FJS-7a4b9e)](#stack)
+Landing page bilingüe para el retiro Vientre Divino, una experiencia íntima para mujeres en Mount Shasta, California.
 
-Landing page bilingue (espanol/ingles) para el retiro Vientre Divino en Mount Shasta, California.
+[![Estado](https://img.shields.io/badge/estado-activo-1f6f8b)](#descripción)
+[![Idioma](https://img.shields.io/badge/idioma-ES%20%7C%20EN-0c6d62)](#contenido)
+[![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-7a4b9e)](#stack)
 
-> [!IMPORTANT]
-> Fechas vigentes del retiro: **27 al 30 de agosto de 2026**.
+> [!NOTE]
+> Fechas del retiro: **27 al 30 de agosto de 2026**.
 
 > [!TIP]
-> El proyecto esta optimizado para conversion, carga rapida y mantenimiento simple sin dependencias de build.
+> El sitio está pensado para abrir rápido, verse bien en móvil y convertir visitas en consultas reales por WhatsApp.
 
-## Resumen
+## Descripción
 
-Sitio estatico orientado a conversion con narrativa emocional, prueba social visual, itinerario por dias, FAQ y CTAs directos a WhatsApp.
+Vientre Divino presenta una propuesta clara, emocional y directa para comunicar el retiro en español e inglés. El sitio prioriza la lectura fluida, la prueba visual, el acceso rápido al contacto y una navegación simple en cualquier dispositivo.
 
-## Estado
+## Lo que incluye
 
-| Area | Estado |
-|---|---|
-| Contenido ES | Listo |
-| Contenido EN | Listo |
-| Responsive (mobile/tablet/desktop) | Validado |
-| Lightbox de galeria | Activo |
-| CTA WhatsApp | Activo |
+- Versión en español e inglés con navegación separada.
+- Diseño responsive para teléfono, tablet y escritorio.
+- CTA principal hacia WhatsApp.
+- Galería visual y lightbox para imágenes.
+- FAQ interactiva.
+- Animaciones de entrada con AOS.
+- Favicon y manifiesto para mejor compatibilidad en dispositivos.
 
-## Arquitectura
+## Stack
+
+- HTML5 semántico.
+- CSS3 moderno con variables, grid y flexbox.
+- JavaScript vanilla.
+- AOS via CDN para animaciones suaves.
+
+## Estructura
 
 ```text
 vientre_divino/
-|- index.html
-|- index-en.html
-|- README.md
-|- assets/
-|  |- css/
-|  |  |- site.css
-|  |- js/
-|     |- site.js
-|- img/
+├── index.html
+├── index-en.html
+├── README.md
+├── site.webmanifest
+├── assets/
+│   ├── css/
+│   │   └── site.css
+│   └── js/
+│       └── site.js
+└── img/
+    ├── logo-Mundoholistico.png
+    └── ...
 ```
 
 ```mermaid
@@ -44,70 +56,59 @@ flowchart LR
   A[index.html / index-en.html] --> B[assets/css/site.css]
   A --> C[assets/js/site.js]
   A --> D[img/*]
-  C --> E[AOS e interacciones UI]
-  C --> F[Tabs + FAQ + Lightbox]
+  A --> E[site.webmanifest]
+  C --> F[AOS e interacciones UI]
+  C --> G[Tabs + FAQ + Lightbox]
 ```
 
-## Stack
+## Contenido principal
 
-- HTML5 semantico
-- CSS3 moderno (custom properties, grid, flex, media queries)
-- JavaScript vanilla
-- AOS via CDN (animaciones de entrada)
-
-## Contenido
-
-| Archivo | Proposito |
+| Archivo | Propósito |
 |---|---|
-| [index.html](index.html) | Version en espanol |
-| [index-en.html](index-en.html) | Version en ingles |
+| [index.html](index.html) | Versión en español |
+| [index-en.html](index-en.html) | Versión en inglés |
 | [assets/css/site.css](assets/css/site.css) | Estilos globales |
-| [assets/js/site.js](assets/js/site.js) | Comportamiento UI |
+| [assets/js/site.js](assets/js/site.js) | Interacciones de la interfaz |
+| [site.webmanifest](site.webmanifest) | Soporte de iconos y experiencia PWA básica |
 
-## Desarrollo Local
+## Uso local
 
-### Opcion A: apertura directa
+### Opción 1: abrir directamente
 
 ```powershell
 start index.html
 ```
 
-### Opcion B: servidor local (recomendado)
+### Opción 2: servidor local recomendado
 
 ```powershell
 python -m http.server 8000
 ```
 
-Abrir: <http://localhost:8000>
+Luego abrir:
 
-## Criterios de Calidad
-
-- Paridad funcional entre ES y EN.
-- Verificacion visual en 390px, 768px y 1280px.
-- CTAs con texto y fechas coherentes.
-- Imagenes optimizadas (WebP cuando aplica).
-
-## Roadmap
-
-- [ ] Metadata social completa (Open Graph y X Cards).
-- [ ] Eventos de conversion (clicks en CTA WhatsApp).
-- [ ] Auditoria automatizada con Lighthouse CI.
-- [ ] Estrategia AVIF para imagenes hero/galerias.
-
-## Git
-
-Repositorio: <https://github.com/MaickR/vientre_divino.git>
-
-```bash
-git add .
-git commit -m "mensaje"
-git push origin main
+```text
+http://localhost:8000
 ```
+
+## Criterios de calidad
+
+- Paridad funcional entre español e inglés.
+- Lectura clara en pantallas pequeñas.
+- CTA visible y consistente.
+- Navegación simple y sin fricción.
+- Recursos optimizados para una carga ágil.
+
+## Notas de mantenimiento
+
+- No hay proceso de build.
+- El proyecto se puede editar y publicar como sitio estático.
+- Las rutas internas usan archivos locales, sin dependencias de backend.
 
 ## Licencia
 
-Uso privado/propietario salvo indicacion expresa del autor.
+Uso privado / propietario salvo indicación expresa del autor.
 
 ---
 
-<sub>Ultima actualizacion documental: 2026-05-18</sub>
+<sub>Última actualización documental: 2026-08-10</sub>
